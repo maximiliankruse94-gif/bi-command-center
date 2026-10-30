@@ -1,0 +1,13 @@
+# Produkt-Vereinheitlichung
+# ------------------------------------------------------------
+# Automatisch zusammengeführt werden Schreibvarianten, die sich nur durch
+# Groß-/Kleinschreibung, Leerzeichen, Bindestriche oder Punkte unterscheiden
+# (z.B. "KI DMMC" = "KI-DMMC", "24MCS" = "24 MCS", "B-Day" = "Bday" = "B-DAY").
+#
+# Inhaltliche Zusammenfassungen müssen bewusst hier eingetragen werden –
+# das System rät NICHT, ob zwei unterschiedliche Kürzel dasselbe Produkt sind.
+#
+# Format:  Variante: Zielprodukt
+aliases: {}
+#  ICM: ICMO
+#  "24MCS - A": 24MCS

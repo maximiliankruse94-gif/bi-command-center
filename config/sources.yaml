@@ -1,0 +1,33 @@
+# Datenquellen des BI Command Centers
+# ------------------------------------------------------------
+# Neue Arbeitsmappe ergänzen: einen weiteren Block anlegen.
+# file_id = der Teil zwischen /d/ und /edit im Google-Sheets-Link.
+# expected_kinds dient nur als Plausibilitätsprüfung – die Zuordnung
+# jedes Tabs erfolgt über Spaltenüberschriften, Datentypen und Inhalte.
+timezone: Europe/Berlin
+daily_sync_time: "06:00"
+
+workbooks:
+  - key: daily
+    name: Tagesstatistiken
+    file_id: 1Q4CdkrReJ8ZxradzIu-zzFlgJXrR1mDWZY113e_tc54
+    local_file: data/daily.xlsx
+    expected_kinds: [daily]
+
+  - key: weekly
+    name: Wochenstatistiken
+    file_id: 10tq4Jvwqjcg45u51iGI5Z2UcHfN-mZmhoo0hluS4hAU
+    local_file: data/weekly.xlsx
+    expected_kinds: [weekly]
+
+  - key: monthly
+    name: Monatsstatistiken
+    file_id: 1dTB3npZCUlpTI0ju7ltVkImT-Hqc563xp6VtsFI6mBc
+    local_file: data/monthly.xlsx
+    expected_kinds: [monthly]
+
+  - key: newsletter
+    name: Newsletter-Statistiken
+    file_id: 1Za7mmKrJS0wUyK5OoAG7gsQ9K6geJioCjMl8_KB1y5o
+    local_file: data/newsletter.xlsx
+    expected_kinds: [newsletter]

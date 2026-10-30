@@ -1,0 +1,14 @@
+# Manuelle Tab-Zuordnungen
+# ------------------------------------------------------------
+# Wird ein Tabellenblatt nicht eindeutig erkannt, erscheint es im Dashboard
+# unter "Datenmanagement" als unbekannt. Dort gespeicherte Zuordnungen werden
+# in der Datenbank abgelegt UND können hier dauerhaft (versioniert in Git)
+# hinterlegt werden. Einträge hier haben Vorrang vor der Automatik.
+#
+# Mögliche kinds: daily, weekly, monthly, newsletter, ignore
+#
+# Beispiel:
+# - workbook: newsletter
+#   tab: "Mails 2027 Q1 (neu)"
+#   kind: newsletter
+mappings: []
