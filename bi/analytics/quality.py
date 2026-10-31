@@ -80,13 +80,13 @@ def missing_days(daily: pd.DataFrame | None = None) -> list:
 def cross_checks() -> list[Issue]:
     issues: list[Issue] = []
     rm = reconcile_monthly()
-    for r in rm[rm.status == "Abweichung"].itertuples():
+    for r in (rm[rm.status == "Abweichung"] if "status" in rm else rm.iloc[0:0]).itertuples():
         issues.append(Issue("warning", "abgleich_tag_monat",
                             f"{int(r.month):02d}/{int(r.year)}: Summe Tagesumsätze {r.umsatz_tage:,.2f} € vs. Monatsstatistik "
                             f"(ohne CopeCart) {r.umsatz_monat_ohne_cc:,.2f} € – Differenz {r.diff:,.2f} € ({r.diff_pct:.1%})",
                             "monthly"))
     rw = reconcile_weekly()
-    for r in rw[rw.status == "Abweichung"].itertuples():
+    for r in (rw[rw.status == "Abweichung"] if "status" in rw else rw.iloc[0:0]).itertuples():
         issues.append(Issue("info", "abgleich_tag_woche",
                             f"KW {int(r.iso_week)}/{int(r.iso_year)}: Tage {r.umsatz_tage:,.2f} € vs. Woche (ohne CopeCart) "
                             f"{r.umsatz_woche_ohne_cc:,.2f} € – Differenz {r.diff:,.2f} €", "weekly"))

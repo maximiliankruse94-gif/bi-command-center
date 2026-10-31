@@ -34,7 +34,7 @@ def require_login() -> tuple[str, str]:
     """Gibt (email, rolle) zurück oder stoppt die Seite."""
     mode = os.getenv("BICC_AUTH_MODE", "none").lower()
     if mode == "none":
-        if os.getenv("BICC_ENV", "dev") != "dev":
+        if os.getenv("BICC_ENV", "prod") != "dev":
             st.error("Sicherheitsfehler: Ohne Anmeldung darf die App nur lokal (BICC_ENV=dev) laufen.")
             st.stop()
         return "lokal@dev", "admin"

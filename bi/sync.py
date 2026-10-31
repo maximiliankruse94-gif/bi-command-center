@@ -39,6 +39,9 @@ def _fetch(wb: dict, mode: str, known_modified: str | None, force: bool) -> load
         return loader.fetch_public_link(wb["file_id"])
     path = wb.get("local_file")
     p = (ROOT / path) if path and not str(path).startswith("/") else path
+    if not p or not __import__("os").path.exists(str(p)):
+        raise RuntimeError("Kein Google-Zugang eingerichtet: In den Secrets fehlen BICC_SOURCE_MODE = \"google\" und "
+                           "GOOGLE_SERVICE_ACCOUNT_JSON (oder BICC_SOURCE_MODE = \"public_link\"). Lokale Datei nicht vorhanden.")
     return loader.fetch_local(str(p))
 
 
